@@ -3,11 +3,11 @@ SHELL = /bin/bash
 # 变量
 export NAMESPACE   := rails6
 export PJNAME         := rails6
-export IMAGE_NAME  := jiujiubad/rails6-puma
+export IMAGE_NAME  := huangxiaofenglogin/rails6-puma
 
 # docker 镜像标签
 ifeq ($(tag),)
-	tag := 1.0.0
+	tag := 1.0.2
 else
 	tag := $(tag)
 endif
@@ -60,7 +60,7 @@ namespace:
 # 本地不存在的镜像版本，才会执行 build
 docker-build:
 	if [ "$$(docker image ls -q $(IMAGE_NAME):$(tag))" == "" ]; then \
-		docker build -t $(IMAGE_NAME):$(tag) ../; \
+		docker build -t $(IMAGE_NAME):$(tag)   ..; \
 	fi; \
 	docker history $(IMAGE_NAME):$(tag) 2>&1 | head -n 6
 

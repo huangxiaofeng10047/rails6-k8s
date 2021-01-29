@@ -1,18 +1,20 @@
 # ledermann/docker-rails-base：https://github.com/ledermann/docker-rails-base
 FROM ruby:2.7-alpine
-LABEL maintainer="jiujiubad@gmail.com"
+LABEL maintainer="huangxiaofenglogin@gmail.com"
 
 # 安装 apk
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 RUN apk add --update --no-cache build-base git nodejs yarn tzdata libxml2-dev postgresql-dev mysql-dev mariadb-dev
 
 WORKDIR /app
 
 # 安装 node（构建基础镜像时，适合用 --frozen-lockfile 锁住版本）
 COPY package.json yarn.lock /app/
-RUN yarn install --frozen-lockfile
+# RUN yarn install --frozen-lockfile
 
 # 安装 gem（同 yarn 在构建基础镜像时用 lock 锁住版本）
 COPY Gemfile Gemfile.lock /app/
+RUN gem sources -r https://rubygems.org/ -a https://gems.ruby-china.com/
 RUN gem install bundler && \
        bundle config --local frozen 1 && \
        bundle config --local build.sassc --disable-march-tune-native && \
@@ -23,7 +25,8 @@ RUN gem install bundler && \
 
 # 更新 gem
 ONBUILD COPY Gemfile Gemfile.lock /app/
-ONBUILD RUN  gem install bundler && \
+ONBUILD RUN  gem sources -r https://rubygems.org/ -a https://gems.ruby-china.com/  && \
+gem install bundler && \
                       bundle config set without 'development test' && \
                       bundle install -j 4 -r 3 && \
                       bundle clean --force && \
@@ -39,7 +42,7 @@ ONBUILD COPY . /app
 # RAILS_ENV=production 指定要编译的环境，以解决报错 ERROR: bundle exec rails assets:precompile' returned a non-zero code
 # 重命名 credentials.yml.enc（相当于把它隐藏掉），使用假的 KEY 就可以继续编译，以解决报错 MessageEncryptor、MissingKeyError
 ONBUILD RUN mv config/credentials.yml.enc config/credentials.yml.enc.bak 2>/dev/null || true
-ONBUILD RUN RAILS_ENV=production SECRET_KEY_BASE=123 RAILS_MASTER_KEY=123 bundle exec rails assets:precompile
+ONBUILD RUN RAILS_ENV=production SECRET_KEY_BASE=123 RAILS_MASTER_KEY=d44040af1e48511f306b0dca4567935e bundle exec rails assets:precompile
 ONBUILD RUN mv config/credentials.yml.enc.bak config/credentials.yml.enc 2>/dev/null || true
 
 # 删除多余的文件

@@ -27,16 +27,16 @@
 
 ## 开始
 
-0）安装：[kube/文档/0-docker-k8s-安装.md](https://github.com/jiujiubad/rails6-k8s/blob/master/kube/%E6%96%87%E6%A1%A3/0-docker-k8s-%E5%AE%89%E8%A3%85.md)
+0）安装：[kube/文档/0-docker-k8s-安装.md](https://github.com/huangxiaofenglogin/rails6-k8s/blob/master/kube/%E6%96%87%E6%A1%A3/0-docker-k8s-%E5%AE%89%E8%A3%85.md)
 
-1）rails 项目：[kube/文档/1-rails-demo.md](https://github.com/jiujiubad/rails6-k8s/blob/master/kube/%E6%96%87%E6%A1%A3/1-rails-demo.md)
+1）rails 项目：[kube/文档/1-rails-demo.md](https://github.com/huangxiaofenglogin/rails6-k8s/blob/master/kube/%E6%96%87%E6%A1%A3/1-rails-demo.md)
 
-2）使用 docker-compose 部署所有服务：[kube/文档/2-docker-compose.md](https://github.com/jiujiubad/rails6-k8s/blob/master/kube/%E6%96%87%E6%A1%A3/2-docker-compose.md)
+2）使用 docker-compose 部署所有服务：[kube/文档/2-docker-compose.md](https://github.com/huangxiaofenglogin/rails6-k8s/blob/master/kube/%E6%96%87%E6%A1%A3/2-docker-compose.md)
 
-3）使用 k8s 部署所有服务：[kube/文档/3-k8s.md](https://github.com/jiujiubad/rails6-k8s/blob/master/kube/%E6%96%87%E6%A1%A3/3-k8s.md)
+3）使用 k8s 部署所有服务：[kube/文档/3-k8s.md](https://github.com/huangxiaofenglogin/rails6-k8s/blob/master/kube/%E6%96%87%E6%A1%A3/3-k8s.md)
 
-4）部署 k8s dashboard 仪表盘：[kube/文档/4-k8s-dashboard.md](https://github.com/jiujiubad/rails6-k8s/blob/master/kube/%E6%96%87%E6%A1%A3/4-k8s-dashboard.md)
+4）部署 k8s dashboard 仪表盘：[kube/文档/4-k8s-dashboard.md](https://github.com/huangxiaofenglogin/rails6-k8s/blob/master/kube/%E6%96%87%E6%A1%A3/4-k8s-dashboard.md)
 
-5）kubectl 命令行代替 dashboard：[kube/文档/5-k8s-命令行替代dashboard.md](https://github.com/jiujiubad/rails6-k8s/blob/master/kube/%E6%96%87%E6%A1%A3/5-k8s-%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9B%BF%E4%BB%A3dashboard.md)
+5）kubectl 命令行代替 dashboard：[kube/文档/5-k8s-命令行替代dashboard.md](https://github.com/huangxiaofenglogin/rails6-k8s/blob/master/kube/%E6%96%87%E6%A1%A3/5-k8s-%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9B%BF%E4%BB%A3dashboard.md)
 
-6）加深对 k8s 的理解：[kube/文档/6-视频-1天入门Kubernetes.md](https://github.com/jiujiubad/rails6-k8s/blob/master/kube/%E6%96%87%E6%A1%A3/6-%E8%A7%86%E9%A2%91-1%E5%A4%A9%E5%85%A5%E9%97%A8Kubernetes.md)
+6）加深对 k8s 的理解：[kube/文档/6-视频-1天入门Kubernetes.md](https://github.com/huangxiaofenglogin/rails6-k8s/blob/master/kube/%E6%96%87%E6%A1%A3/6-%E8%A7%86%E9%A2%91-1%E5%A4%A9%E5%85%A5%E9%97%A8Kubernetes.md)

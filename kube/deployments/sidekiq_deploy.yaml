@@ -22,8 +22,8 @@ spec:
       terminationGracePeriodSeconds: 65
       containers:
         - name: sidekiq
-          image: jiujiubad/rails6-puma:1.0.0
-          # imagePullPolicy: Always
+          image: huangxiaofenglogin/rails6-puma:1.0.2
+          imagePullPolicy: Always
           command:
             - ./bin/k8s/start-sidekiq
           livenessProbe:
@@ -38,17 +38,17 @@ spec:
                 name: rails6-env
       imagePullSecrets:
       - name: rails6-docker-hub
-      affinity:
-        podAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - rails6
-              - key: component
-                operator: In
-                values:
-                - redis
-            topologyKey: "kubernetes.io/hostname"
+      # affinity:
+      #   podAffinity:
+      #     requiredDuringSchedulingIgnoredDuringExecution:
+      #     - labelSelector:
+      #         matchExpressions:
+      #         - key: app
+      #           operator: In
+      #           values:
+      #           - rails6
+      #         - key: component
+      #           operator: In
+      #           values:
+      #           - redis
+      #       topologyKey: "kubernetes.io/hostname"

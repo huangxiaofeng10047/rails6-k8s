@@ -4,7 +4,7 @@ version: "3.4"
 services:
   rails6-puma:
     container_name: rails6-puma
-    image: jiujiubad/rails6-puma:lastest
+    image: huangxiaofenglogin/rails6-puma:lastest
     build:
       context: .
       dockerfile: Dockerfile
@@ -21,7 +21,7 @@ services:
 
   rails6-sidekiq:
     container_name: rails6-sidekiq
-    image: jiujiubad/rails6-puma:lastest
+    image: huangxiaofenglogin/rails6-puma:lastest
     env_file:
       - .env
     depends_on:

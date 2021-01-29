@@ -25,7 +25,7 @@ spec:
             claimName: rails6-uploads
       containers:
         - name: puma
-          image: jiujiubad/rails6-puma:1.0.0
+          image: huangxiaofenglogin/rails6-puma:1.0.2
           # imagePullPolicy: Always
           ports:
             - containerPort: 3000
@@ -53,17 +53,17 @@ spec:
               mountPath: /app/public/uploads
       imagePullSecrets:
         - name: rails6-docker-hub
-      affinity:
-        podAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - rails6
-              - key: component
-                operator: In
-                values:
-                - pg
-            topologyKey: "kubernetes.io/hostname"
+      # affinity:
+      #   podAffinity:
+      #     requiredDuringSchedulingIgnoredDuringExecution:
+      #     - labelSelector:
+      #         matchExpressions:
+      #         - key: app
+      #           operator: In
+      #           values:
+      #           - rails6
+      #         - key: component
+      #           operator: In
+      #           values:
+      #           - pg
+      #       topologyKey: "kubernetes.io/hostname"

@@ -17,7 +17,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: job-prepare-db
-          image: jiujiubad/rails6-puma:1.0.0
+          image: huangxiaofenglogin/rails6-puma:1.0.2
           # imagePullPolicy: Always
           command:
             - ./bin/k8s/prepare-db

@@ -50,30 +50,30 @@ spec:
                 name: rails6-env
             - secretRef:
                 name: rails6-env
-      affinity:
-        podAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - rails6
-              - key: component
-                operator: In
-                values:
-                - pg
-            topologyKey: "kubernetes.io/hostname"
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - rails6
-              - key: component
-                operator: In
-                values:
-                - redis
-            topologyKey: "kubernetes.io/hostname"
+      # affinity:
+      #   podAffinity:
+      #     requiredDuringSchedulingIgnoredDuringExecution:
+      #     - labelSelector:
+      #         matchExpressions:
+      #         - key: app
+      #           operator: In
+      #           values:
+      #           - rails6
+      #         - key: component
+      #           operator: In
+      #           values:
+      #           - pg
+      #       topologyKey: "kubernetes.io/hostname"
+      #   podAntiAffinity:
+      #     requiredDuringSchedulingIgnoredDuringExecution:
+      #     - labelSelector:
+      #         matchExpressions:
+      #         - key: app
+      #           operator: In
+      #           values:
+      #           - rails6
+      #         - key: component
+      #           operator: In
+      #           values:
+      #           - redis
+      #       topologyKey: "kubernetes.io/hostname"

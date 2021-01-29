@@ -1,5 +1,5 @@
-FROM jiujiubad/rails-base:2.7
-LABEL maintainer="jiujiubad@gmail.com"
+FROM huangxiaofenglogin/rails-base:2.7
+LABEL maintainer="huangxiaofenglogin@gmail.com"
 
 # 安装 apk（追加需要用到的包）
 # RUN apk add --update --no-cache <名称>
